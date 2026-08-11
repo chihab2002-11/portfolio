@@ -6,14 +6,14 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-subtle bg-white py-12 sm:py-14">
+    <footer className="border-t-[2px] border-[var(--border-color)] bg-[var(--surface)] py-12 sm:py-14">
       <Container>
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="font-display text-lg font-medium tracking-tight text-text-primary">
+            <p className="font-display text-lg font-bold tracking-[-0.04em] text-[var(--text-primary)]">
               {siteConfig.name.toUpperCase()}
             </p>
-            <p className="mt-2 text-sm text-text-secondary">
+            <p className="mt-2 text-sm text-[var(--text-secondary)]">
               {siteConfig.footerTagline}
             </p>
           </div>
@@ -27,7 +27,7 @@ export function Footer() {
           </ul>
         </div>
 
-        <p className="mt-10 text-xs text-text-muted">
+        <p className="mt-10 text-xs text-[var(--text-secondary)]">
           © {year} {siteConfig.name}. All rights reserved.
         </p>
       </Container>

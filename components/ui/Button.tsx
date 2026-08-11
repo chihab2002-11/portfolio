@@ -22,11 +22,11 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-accent text-white hover:bg-accent/90 border border-accent/20 accent-glow hover:-translate-y-0.5 hover:shadow-md",
+    "border-[var(--border-width)] border-[var(--border-color)] bg-[var(--text-primary)] text-[var(--surface)] hover:opacity-90",
   secondary:
-    "bg-white text-text-primary border border-subtle hover:border-accent/25 hover:text-text-primary hover:shadow-sm",
+    "border-[var(--border-width)] border-[var(--border-color)] bg-[var(--bg-cream)] text-[var(--text-primary)] hover:bg-[var(--surface)]",
   ghost:
-    "text-text-secondary hover:text-text-primary border border-transparent hover:border-subtle hover:bg-bg-secondary",
+    "border-[var(--border-width)] border-transparent bg-transparent text-[var(--text-secondary)] hover:border-[var(--border-color)] hover:bg-[var(--surface)]",
 };
 
 const sizes: Record<ButtonSize, string> = {
@@ -43,8 +43,8 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-300",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary",
+    "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-cream)]",
     "disabled:pointer-events-none disabled:opacity-50",
     variants[variant],
     sizes[size],

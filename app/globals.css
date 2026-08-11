@@ -1,17 +1,32 @@
 @import "tailwindcss";
 
+:root {
+  --bg-sage: #A9D8BA;
+  --bg-cream: #FFF8E7;
+  --accent-yellow: #F0C43C;
+  --accent-pink: #FCC6FD;
+  --surface: #FBFAF6;
+  --border-color: #111111;
+  --text-primary: #111111;
+  --text-secondary: #6A6A6A;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+  --border-width: 2px;
+}
+
 @theme {
-  --color-bg-primary: #fdfafb;
-  --color-bg-secondary: #faf5f7;
-  --color-bg-tertiary: #f6f0f3;
-  --color-text-primary: #111113;
-  --color-text-secondary: #52525b;
-  --color-text-muted: #71717a;
-  --color-accent: #ff2d75;
-  --color-accent-pink: #ff5c93;
-  --color-accent-coral: #ff6b4a;
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-border-hover: rgba(0, 0, 0, 0.14);
+  --color-bg-primary: var(--bg-cream);
+  --color-bg-secondary: var(--surface);
+  --color-bg-tertiary: #f2efe7;
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: #7a7a7a;
+  --color-accent: var(--text-primary);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-coral: var(--accent-yellow);
+  --color-border: var(--border-color);
+  --color-border-hover: var(--border-color);
 
   --font-sans: var(--font-inter);
   --font-display: var(--font-space-grotesk);
@@ -31,6 +46,7 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: var(--bg-cream);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -49,17 +65,41 @@
 
   body {
     @apply bg-bg-primary text-text-primary font-sans antialiased;
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
+    background: var(--bg-cream);
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  p,
+  li,
+  span,
+  small,
+  label,
+  input,
+  textarea,
+  select {
+    letter-spacing: -0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 0.96;
   }
 
   ::selection {
-    background-color: rgba(255, 45, 117, 0.18);
-    color: #111113;
+    background-color: rgba(17, 17, 17, 0.12);
+    color: var(--text-primary);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--text-primary);
     outline-offset: 3px;
   }
 }
@@ -70,59 +110,38 @@
   }
 
   .border-subtle {
-    border-color: var(--color-border);
+    border-color: var(--border-color);
   }
 
   .bg-grid {
     background-image:
-      linear-gradient(rgba(255, 45, 117, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 45, 117, 0.06) 1px, transparent 1px);
+      linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px);
     background-size: 64px 64px;
   }
 
   .bg-page-base {
-    background:
-      linear-gradient(
-        165deg,
-        #fdfafb 0%,
-        #fceff4 28%,
-        #fdf5f0 55%,
-        #fdfafb 100%
-      );
+    background: var(--bg-cream);
   }
 
-  /* Transparent tints — do not wash out decor with white */
   .section-tint-pink {
-    background: linear-gradient(
-      180deg,
-      rgba(255, 45, 117, 0.045) 0%,
-      rgba(255, 45, 117, 0.012) 100%
-    );
+    background: rgba(252, 198, 253, 0.18);
   }
 
   .section-tint-warm {
-    background: linear-gradient(
-      180deg,
-      rgba(255, 107, 74, 0.04) 0%,
-      rgba(255, 107, 74, 0.01) 100%
-    );
+    background: rgba(240, 196, 60, 0.09);
   }
 
   .accent-glow {
-    box-shadow: 0 4px 20px rgba(255, 45, 117, 0.18);
+    box-shadow: none;
   }
 
   .card-shadow {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+    box-shadow: none;
   }
 
   .section-divider {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(0, 0, 0, 0.08),
-      transparent
-    );
-    height: 1px;
+    background: var(--border-color);
+    height: 2px;
   }
 }

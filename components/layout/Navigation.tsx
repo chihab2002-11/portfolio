@@ -63,10 +63,8 @@ export function Navigation() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled
-          ? "border-b border-subtle bg-white/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-200",
+        scrolled ? "border-b-[2px] border-[var(--border-color)] bg-[var(--bg-sage)]" : "bg-[var(--bg-sage)]",
       )}
     >
       <Container as="nav" aria-label="Primary">
@@ -77,7 +75,7 @@ export function Navigation() {
               event.preventDefault();
               handleNavClick("#home");
             }}
-            className="font-display text-sm font-medium tracking-wide text-text-primary transition-colors hover:text-accent"
+            className="font-display text-sm font-bold tracking-[0.12em] text-[var(--text-primary)] transition-colors hover:text-[var(--text-secondary)]"
           >
             CH
           </a>
@@ -95,19 +93,13 @@ export function Navigation() {
                     }}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "relative rounded-md px-3 py-2 text-sm transition-colors duration-300",
+                      "relative rounded-full px-3 py-2 text-sm font-medium transition-colors duration-200",
                       isActive
-                        ? "text-text-primary"
-                        : "text-text-secondary hover:text-text-primary",
+                        ? "bg-[var(--surface)] text-[var(--text-primary)] border-[var(--border-width)] border-[var(--border-color)]"
+                        : "text-[var(--text-primary)] hover:bg-[var(--surface)]",
                     )}
                   >
                     {item.label}
-                    {isActive ? (
-                      <span
-                        aria-hidden="true"
-                        className="absolute inset-x-3 -bottom-0.5 h-px bg-accent"
-                      />
-                    ) : null}
                   </a>
                 </li>
               );
@@ -116,7 +108,7 @@ export function Navigation() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-subtle bg-white text-text-primary transition-colors hover:border-accent/25 hover:shadow-sm md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] text-[var(--text-primary)] md:hidden"
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -130,7 +122,7 @@ export function Navigation() {
       <div
         id="mobile-menu"
         className={cn(
-          "fixed inset-0 top-16 z-40 bg-white/95 backdrop-blur-lg transition-all duration-300 md:hidden",
+          "fixed inset-0 top-16 z-40 bg-[var(--bg-sage)] transition-all duration-200 md:hidden",
           mobileOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0",
@@ -138,7 +130,7 @@ export function Navigation() {
         aria-hidden={!mobileOpen}
       >
         <Container className="py-6">
-          <ul className="space-y-1" role="list">
+          <ul className="space-y-2" role="list">
             {navigation.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -151,15 +143,15 @@ export function Navigation() {
                     }}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "flex items-center justify-between rounded-lg px-4 py-3 text-base transition-colors",
+                      "flex items-center justify-between rounded-full border-[var(--border-width)] px-4 py-3 text-base font-medium transition-colors",
                       isActive
-                        ? "bg-bg-secondary text-text-primary"
-                        : "text-text-secondary hover:bg-bg-secondary hover:text-text-primary",
+                        ? "border-[var(--border-color)] bg-[var(--surface)] text-[var(--text-primary)]"
+                        : "border-transparent text-[var(--text-primary)] hover:border-[var(--border-color)] hover:bg-[var(--surface)]",
                     )}
                   >
                     {item.label}
                     {isActive ? (
-                      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent-yellow)]" />
                     ) : null}
                   </a>
                 </li>

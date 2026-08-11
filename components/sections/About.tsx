@@ -17,7 +17,7 @@ export function About() {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
           <Reveal delay={0.05}>
-            <div className="space-y-5 text-base leading-relaxed text-text-secondary sm:text-lg">
+            <div className="space-y-5 text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
               <p>
                 I am a Computer Science student specializing in Information
                 Systems, with a focus on building real software — not just
@@ -40,11 +40,11 @@ export function About() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <Card className="h-full bg-bg-secondary/50">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+            <Card className="h-full bg-[var(--surface)]">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--text-secondary)]">
                 Focus
               </p>
-              <ul className="mt-4 space-y-3 text-sm text-text-secondary" role="list">
+              <ul className="mt-4 space-y-3 text-sm text-[var(--text-secondary)]" role="list">
                 <li>Information Systems foundation</li>
                 <li>Full-stack & backend development</li>
                 <li>Real-world software systems</li>

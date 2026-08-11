@@ -46,10 +46,10 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-subtle bg-white px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-text-secondary card-shadow sm:text-[13px]">
+            <div className="mt-8 inline-flex items-center gap-2.5 rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--accent-yellow)] px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-[var(--text-primary)] sm:text-[13px]">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-40 motion-reduce:animate-none" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--text-primary)] opacity-40 motion-reduce:animate-none" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--text-primary)]" />
               </span>
               {siteConfig.availability}
             </div>

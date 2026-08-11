@@ -92,21 +92,21 @@ export function SocialLinkItem({
             : `${link.label}`
       }
       className={cn(
-        "inline-flex items-center gap-2 text-sm text-text-secondary transition-all duration-300 hover:text-text-primary",
+        "inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors duration-200 hover:text-[var(--text-primary)]",
         variant === "hero" &&
-          "rounded-lg border border-subtle bg-white px-3 py-2 card-shadow hover:border-accent/25 hover:text-accent",
-        variant === "footer" && "hover:text-accent",
+          "rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] px-3 py-2",
+        variant === "footer" && "hover:text-[var(--text-primary)]",
         variant === "contact" &&
-          "flex-col gap-3 text-base hover:text-accent",
+          "flex-col gap-3 rounded-[var(--radius-md)] border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] p-5 text-base text-[var(--text-primary)]",
       )}
     >
       <Icon size={variant === "hero" || variant === "contact" ? 18 : 14} />
       <span>{variant === "contact" ? link.label : labelText}</span>
       {variant === "contact" && link.display ? (
-        <span className="text-sm text-text-muted">{link.display}</span>
+        <span className="text-sm text-[var(--text-secondary)]">{link.display}</span>
       ) : null}
       {variant === "contact" && link.id === "email" ? (
-        <span className="text-sm text-text-muted">{link.href}</span>
+        <span className="text-sm text-[var(--text-secondary)]">{link.href}</span>
       ) : null}
     </a>
   );
@@ -144,7 +144,7 @@ export function CvDownloadButton() {
         type="button"
         disabled
         title="Add your CV to public/assets/cv.pdf"
-        className="inline-flex h-12 cursor-not-allowed items-center justify-center rounded-lg border border-subtle bg-white px-6 text-sm text-text-muted opacity-70"
+        className="inline-flex h-12 cursor-not-allowed items-center justify-center rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] px-6 text-sm text-[var(--text-secondary)] opacity-70"
       >
         CV unavailable
       </button>
@@ -155,7 +155,7 @@ export function CvDownloadButton() {
     <a
       href={siteConfig.cvPath}
       download
-      className="inline-flex h-12 items-center justify-center rounded-lg border border-subtle bg-white px-6 text-sm font-medium text-text-primary transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary"
+      className="inline-flex h-12 items-center justify-center rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] px-6 text-sm font-medium text-[var(--text-primary)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-cream)]"
     >
       Download CV
     </a>
