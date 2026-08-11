@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #fdfafb;
+  --color-bg-secondary: #faf5f7;
+  --color-bg-tertiary: #f6f0f3;
+  --color-text-primary: #111113;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #71717a;
+  --color-accent: #ff2d75;
+  --color-accent-pink: #ff5c93;
+  --color-accent-coral: #ff6b4a;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(0, 0, 0, 0.14);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+  }
+
+  ::selection {
+    background-color: rgba(255, 45, 117, 0.18);
+    color: #111113;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .border-subtle {
+    border-color: var(--color-border);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 45, 117, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 45, 117, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .bg-page-base {
+    background:
+      linear-gradient(
+        165deg,
+        #fdfafb 0%,
+        #fceff4 28%,
+        #fdf5f0 55%,
+        #fdfafb 100%
+      );
+  }
+
+  /* Transparent tints — do not wash out decor with white */
+  .section-tint-pink {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 45, 117, 0.045) 0%,
+      rgba(255, 45, 117, 0.012) 100%
+    );
+  }
+
+  .section-tint-warm {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 107, 74, 0.04) 0%,
+      rgba(255, 107, 74, 0.01) 100%
+    );
+  }
+
+  .accent-glow {
+    box-shadow: 0 4px 20px rgba(255, 45, 117, 0.18);
+  }
+
+  .card-shadow {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+
+  .section-divider {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0.08),
+      transparent
+    );
+    height: 1px;
+  }
+}
