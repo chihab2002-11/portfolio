@@ -54,7 +54,7 @@ export function Work() {
               <Reveal delay={0.05}>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {luminaProject.technologies.map((tech) => (
-                    <TechBadge key={tech} label={tech} variant="mono" />
+                    <TechBadge key={tech} label={tech} variant="accent" />
                   ))}
                 </div>
               </Reveal>
@@ -147,7 +147,11 @@ export function Work() {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {luminaProject.features.map((feature) => (
-                      <TechBadge key={feature.id} label={feature.label} />
+                      <TechBadge
+                        key={feature.id}
+                        label={feature.label}
+                        variant="accent"
+                      />
                     ))}
                   </div>
                 </div>
@@ -241,7 +245,7 @@ export function Work() {
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {expertSystemProject.technologies.map((tech) => (
-                      <TechBadge key={tech} label={tech} variant="mono" />
+                      <TechBadge key={tech} label={tech} variant="accent" />
                     ))}
                   </div>
                 </div>

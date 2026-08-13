@@ -42,7 +42,7 @@ export function Skills() {
                     <TechBadge
                       key={item}
                       label={item}
-                      variant={category.id === "ai-data" ? "accent" : "default"}
+                      variant="accent"
                     />
                   ))}
                 </div>

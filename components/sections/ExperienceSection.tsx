@@ -107,11 +107,11 @@ export function ExperienceSection() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
-              {learningAreas.map((area, index) => (
+              {learningAreas.map((area) => (
                 <TechBadge
                   key={area}
                   label={area}
-                  variant={index % 3 === 0 ? "accent" : "default"}
+                  variant="accent"
                 />
               ))}
             </div>
