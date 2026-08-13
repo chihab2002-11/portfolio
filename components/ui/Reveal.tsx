@@ -22,7 +22,8 @@ export function Reveal({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const offset = direction === "up" ? 24 : direction === "down" ? -24 : 0;

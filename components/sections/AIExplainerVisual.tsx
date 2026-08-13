@@ -8,7 +8,8 @@ export function AIExplainerVisual() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const animate = mounted && !prefersReducedMotion;
@@ -27,7 +28,7 @@ export function AIExplainerVisual() {
           <p className="text-[10px] uppercase tracking-wider text-text-muted">
             Material
           </p>
-          <p className="mt-2 text-sm text-text-primary">
+          <p className="mt-2 break-all text-sm text-text-primary">
             Introduction_to_Algebra.pdf
           </p>
         </section>

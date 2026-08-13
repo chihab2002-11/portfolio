@@ -56,7 +56,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.25}>
-            <div className="mt-9 flex flex-col gap-3 xs:flex-row sm:mt-10 sm:items-center">
+            <div className="mt-9 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:items-center">
               <Button href="#work" variant="primary" size="lg" className="w-full sm:w-auto">
                 Explore My Work
               </Button>

@@ -9,13 +9,13 @@ export function Contact() {
     <Section
       id="contact"
       ariaLabel="Contact"
-      className="section-tint-pink pb-28 sm:pb-32"
+      className="section-tint-pink pb-20 sm:pb-32"
       decor="contact"
     >
       <Container>
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-display text-3xl font-medium tracking-tight text-text-primary sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-[clamp(2rem,10vw,3rem)] font-medium leading-[0.98] tracking-tight text-text-primary sm:text-4xl lg:text-5xl">
               Let&apos;s build something meaningful.
             </h2>
             <p className="mt-4 text-base text-text-secondary sm:text-lg">
@@ -26,7 +26,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-x-5 gap-y-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-6">
+          <div className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-x-5 gap-y-4 sm:mt-10 sm:grid-cols-2 sm:gap-y-5 lg:grid-cols-4 lg:gap-x-6">
             {socialLinks.map((link) => (
               <SocialLinkItem key={link.id} link={link} variant="contact" />
             ))}

@@ -92,9 +92,9 @@ export function SocialLinkItem({
             : `${link.label}`
       }
       className={cn(
-        "inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors duration-200 hover:text-[var(--text-primary)]",
+        "inline-flex max-w-full items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors duration-200 hover:text-[var(--text-primary)]",
         variant === "hero" &&
-          "rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] px-3 py-2",
+          "min-h-11 rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] px-3 py-2",
         variant === "footer" && "hover:text-[var(--text-primary)]",
         variant === "contact" &&
           "min-w-0 flex-col gap-3 rounded-[var(--radius-md)] border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] p-5 text-center text-base text-[var(--text-primary)]",
@@ -144,7 +144,7 @@ export function CvDownloadButton() {
         type="button"
         disabled
         title="Add your CV to public/assets/cv.pdf"
-        className="inline-flex h-12 cursor-not-allowed items-center justify-center rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] px-6 text-sm text-[var(--text-secondary)] opacity-70"
+        className="inline-flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] px-5 text-center text-sm text-[var(--text-secondary)] opacity-70 sm:w-auto sm:px-6"
       >
         CV unavailable
       </button>
@@ -155,7 +155,7 @@ export function CvDownloadButton() {
     <a
       href={siteConfig.cvPath}
       download
-      className="inline-flex h-12 items-center justify-center rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] px-6 text-sm font-medium text-[var(--text-primary)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-cream)]"
+      className="inline-flex min-h-12 w-full items-center justify-center rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] px-5 text-center text-sm font-medium text-[var(--text-primary)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-cream)] sm:w-auto sm:px-6"
     >
       Download CV
     </a>

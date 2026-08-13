@@ -13,7 +13,8 @@ export function HeroBackground() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const animate = mounted && !prefersReducedMotion;
@@ -24,9 +25,9 @@ export function HeroBackground() {
       className="pointer-events-none absolute inset-0 overflow-hidden bg-[var(--bg-cream)]"
     >
       <div className="absolute inset-0 bg-[var(--bg-cream)]" />
-      <div className="absolute left-12 top-12 h-24 w-24 rounded-full border-[2px] border-[var(--border-color)] bg-[var(--accent-pink)] opacity-60" />
-      <div className="absolute right-16 top-20 h-36 w-36 rounded-[40%] border-[2px] border-[var(--border-color)] bg-[var(--bg-sage)] opacity-70" />
-      <div className="absolute bottom-16 right-24 h-28 w-28 rounded-[30%] border-[2px] border-[var(--border-color)] bg-[var(--accent-yellow)] opacity-55" />
+      <div className="absolute left-4 top-20 h-16 w-16 rounded-full border-[2px] border-[var(--border-color)] bg-[var(--accent-pink)] opacity-45 sm:left-12 sm:top-12 sm:h-24 sm:w-24 sm:opacity-60" />
+      <div className="absolute right-4 top-24 h-20 w-20 rounded-[40%] border-[2px] border-[var(--border-color)] bg-[var(--bg-sage)] opacity-45 sm:right-16 sm:top-20 sm:h-36 sm:w-36 sm:opacity-70" />
+      <div className="absolute bottom-16 right-4 h-20 w-20 rounded-[30%] border-[2px] border-[var(--border-color)] bg-[var(--accent-yellow)] opacity-35 sm:right-24 sm:h-28 sm:w-28 sm:opacity-55" />
 
       <svg
         className="absolute inset-0 h-full w-full"
@@ -98,7 +99,7 @@ export function HeroBackground() {
         ))}
       </svg>
 
-      <FloatingShape className="absolute right-[12%] top-[22%] opacity-70" delay={0.5} duration={20}>
+      <FloatingShape className="absolute right-[8%] top-[26%] hidden opacity-70 sm:block" delay={0.5} duration={20}>
         <svg width="80" height="60" viewBox="0 0 80 60" fill="none">
           <circle cx="10" cy="30" r="3" fill="rgba(17,17,17,0.8)" />
           <circle cx="70" cy="20" r="2.5" fill="rgba(17,17,17,0.7)" />

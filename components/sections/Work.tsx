@@ -27,7 +27,7 @@ export function Work() {
         </Reveal>
 
         {/* Lumina Academy — featured */}
-        <article className="relative mt-14 overflow-hidden rounded-2xl border border-subtle bg-white card-shadow">
+        <article className="relative mt-10 overflow-hidden rounded-2xl border border-subtle bg-white card-shadow sm:mt-14">
           <AbstractBackground variant="lumina" />
           <div className="relative z-[1]">
           <div className="border-b border-subtle px-5 py-4 sm:px-8 sm:py-5">
@@ -43,7 +43,7 @@ export function Work() {
           <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
             <div className="border-b border-subtle p-5 sm:p-8 lg:border-b-0 lg:border-r">
               <Reveal>
-                <h3 className="font-display text-3xl font-medium tracking-tight text-text-primary sm:text-4xl lg:text-5xl">
+                <h3 className="font-display text-[clamp(2rem,10vw,3rem)] font-medium leading-[0.98] tracking-tight text-text-primary sm:text-4xl lg:text-5xl">
                   {luminaProject.title}
                 </h3>
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg">
@@ -67,7 +67,7 @@ export function Work() {
                         href={luminaProject.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex h-11 items-center gap-2 rounded-full border border-subtle bg-text-primary px-4 text-sm font-medium text-bg-primary transition-transform duration-200 hover:-translate-y-0.5"
+                        className="inline-flex min-h-11 items-center gap-2 rounded-full border border-subtle bg-text-primary px-4 text-sm font-medium text-bg-primary transition-transform duration-200 hover:-translate-y-0.5"
                       >
                         GitHub
                       </a>
@@ -77,7 +77,7 @@ export function Work() {
                         href={luminaProject.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex h-11 items-center gap-2 rounded-full border border-subtle bg-bg-secondary px-4 text-sm font-medium text-text-primary transition-transform duration-200 hover:-translate-y-0.5"
+                        className="inline-flex min-h-11 items-center gap-2 rounded-full border border-subtle bg-bg-secondary px-4 text-sm font-medium text-text-primary transition-transform duration-200 hover:-translate-y-0.5"
                       >
                         Live Demo
                         <ExternalLink size={15} aria-hidden="true" />
@@ -164,7 +164,7 @@ export function Work() {
         {/* AI Material Explainer */}
         <article className="relative mt-10 overflow-hidden rounded-2xl border border-subtle bg-bg-secondary/60">
           <AbstractBackground variant="ai" />
-          <div className="relative z-[1] grid gap-8 p-5 sm:p-8 lg:grid-cols-2 lg:gap-10">
+          <div className="relative z-[1] grid gap-6 p-5 sm:gap-8 sm:p-8 lg:grid-cols-2 lg:gap-10">
             <Reveal>
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">

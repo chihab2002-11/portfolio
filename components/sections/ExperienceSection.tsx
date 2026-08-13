@@ -17,19 +17,19 @@ export function ExperienceSection() {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        <div className="mt-10 grid gap-8 sm:mt-12 lg:grid-cols-2">
           {/* Experience timeline */}
           <Reveal>
             <div>
               <h3 className="font-display text-xl font-medium text-text-primary">
                 Experience
               </h3>
-              <div className="relative mt-6 space-y-6 border-l border-subtle pl-6">
+              <div className="relative mt-5 space-y-6 border-l border-subtle pl-5 sm:mt-6 sm:pl-6">
                 {experience.map((item) => (
                   <article key={item.id} className="relative">
                     <span
                       aria-hidden="true"
-                      className="absolute -left-[calc(1.5rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full border border-accent/40 bg-accent/20"
+                      className="absolute -left-[calc(1.25rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full border border-accent/40 bg-accent/20 sm:-left-[calc(1.5rem+5px)]"
                     />
                     <p className="font-mono text-xs uppercase tracking-wider text-accent">
                       {item.duration}
@@ -94,7 +94,7 @@ export function ExperienceSection() {
 
         {/* Learning direction */}
         <Reveal delay={0.1}>
-          <div className="mt-14 rounded-2xl border border-subtle bg-white p-6 sm:p-8 card-shadow">
+          <div className="mt-10 rounded-2xl border border-subtle bg-white p-5 sm:mt-14 sm:p-8 card-shadow">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
               Direction
             </p>

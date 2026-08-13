@@ -15,7 +15,7 @@ export function About() {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
+        <div className="mt-10 grid gap-6 sm:mt-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
           <Reveal delay={0.05}>
             <div className="space-y-5 text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
               <p>

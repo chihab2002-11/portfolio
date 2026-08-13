@@ -18,16 +18,16 @@ export function Skills() {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5">
           {skillCategories.map((category, index) => (
             <Reveal key={category.id} delay={index * 0.05}>
               <Card hover className="h-full">
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start justify-between gap-3 sm:gap-4">
                   <div>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-text-muted">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-text-muted sm:tracking-[0.2em]">
                       0{index + 1}
                     </p>
-                    <h3 className="mt-2 font-display text-xl font-medium text-text-primary">
+                    <h3 className="mt-2 font-display text-lg font-medium text-text-primary sm:text-xl">
                       {category.title}
                     </h3>
                   </div>

@@ -102,7 +102,7 @@ export function LuminaGallery({ screenshots }: LuminaGalleryProps) {
           </div>
         </div>
 
-        <div className="grid max-h-[680px] grid-cols-1 gap-3 overflow-y-auto pr-1 sm:grid-cols-2">
+        <div className="grid max-h-[520px] grid-cols-1 gap-3 overflow-y-auto pr-1 sm:max-h-[680px] sm:grid-cols-2">
           {visibleScreenshots.map((screenshot, index) => (
             <button
               key={screenshot.image}
@@ -121,7 +121,7 @@ export function LuminaGallery({ screenshots }: LuminaGalleryProps) {
                   onError={() => markImageFailed(screenshot.image)}
                 />
               </span>
-              <span className="block min-h-[92px] p-3">
+              <span className="block p-3 sm:min-h-[92px]">
                 <span className="block font-display text-base font-medium text-text-primary">
                   {screenshot.title}
                 </span>
@@ -148,7 +148,7 @@ export function LuminaGallery({ screenshots }: LuminaGalleryProps) {
             className="relative max-h-full w-full max-w-6xl overflow-hidden rounded-xl border border-subtle bg-bg-primary"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex items-start justify-between gap-4 border-b border-subtle p-4">
+            <div className="flex items-start justify-between gap-3 border-b border-subtle p-3 sm:gap-4 sm:p-4">
               <div>
                 <h4 className="font-display text-xl font-medium text-text-primary sm:text-2xl">
                   {activeScreenshot.title}
