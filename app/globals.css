@@ -47,6 +47,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: var(--bg-cream);
+    overflow-x: clip;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -68,6 +69,7 @@
     background: var(--bg-cream);
     color: var(--text-primary);
     letter-spacing: -0.01em;
+    overflow-x: clip;
   }
 
   p,
@@ -79,6 +81,18 @@
   textarea,
   select {
     letter-spacing: -0.01em;
+  }
+
+  img,
+  svg,
+  canvas,
+  video {
+    max-width: 100%;
+  }
+
+  a,
+  button {
+    overflow-wrap: anywhere;
   }
 
   h1,

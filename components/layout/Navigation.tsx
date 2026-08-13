@@ -75,7 +75,7 @@ export function Navigation() {
               event.preventDefault();
               handleNavClick("#home");
             }}
-            className="font-display text-sm font-bold tracking-[0.12em] text-[var(--text-primary)] transition-colors hover:text-[var(--text-secondary)]"
+            className="inline-flex min-h-11 items-center font-display text-sm font-bold tracking-[0.12em] text-[var(--text-primary)] transition-colors hover:text-[var(--text-secondary)]"
           >
             CH
           </a>
@@ -122,14 +122,14 @@ export function Navigation() {
       <div
         id="mobile-menu"
         className={cn(
-          "fixed inset-0 top-16 z-40 bg-[var(--bg-sage)] transition-all duration-200 md:hidden",
+          "fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto bg-[var(--bg-sage)] transition-all duration-200 md:hidden",
           mobileOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0",
         )}
         aria-hidden={!mobileOpen}
       >
-        <Container className="py-6">
+        <Container className="py-5">
           <ul className="space-y-2" role="list">
             {navigation.map((item) => {
               const isActive = activeSection === item.id;
@@ -143,7 +143,7 @@ export function Navigation() {
                     }}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "flex items-center justify-between rounded-full border-[var(--border-width)] px-4 py-3 text-base font-medium transition-colors",
+                      "flex min-h-12 items-center justify-between rounded-full border-[var(--border-width)] px-4 py-3 text-base font-medium transition-colors",
                       isActive
                         ? "border-[var(--border-color)] bg-[var(--surface)] text-[var(--text-primary)]"
                         : "border-transparent text-[var(--text-primary)] hover:border-[var(--border-color)] hover:bg-[var(--surface)]",

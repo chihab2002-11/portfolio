@@ -32,7 +32,7 @@ const variants: Record<ButtonVariant, string> = {
 const sizes: Record<ButtonSize, string> = {
   sm: "h-9 px-4 text-xs",
   md: "h-11 px-5 text-sm",
-  lg: "h-12 px-6 text-sm sm:text-base",
+  lg: "min-h-12 px-5 text-sm sm:px-6 sm:text-base",
 };
 
 export function Button({
@@ -43,7 +43,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200",
+    "inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-full text-center font-medium transition-all duration-200",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-cream)]",
     "disabled:pointer-events-none disabled:opacity-50",
     variants[variant],

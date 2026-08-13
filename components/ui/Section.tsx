@@ -24,7 +24,7 @@ export function Section({
     <section
       id={id}
       aria-label={ariaLabel}
-      className={cn("relative overflow-hidden py-20 sm:py-24 lg:py-28", className)}
+      className={cn("relative overflow-hidden py-14 sm:py-20 lg:py-28", className)}
     >
       {decor ? <AbstractBackground variant={decor} /> : null}
       <div className="relative z-[1]">{children}</div>
