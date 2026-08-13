@@ -3,7 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SocialLinkItem } from "@/components/ui/SocialLinkItem";
-import { Card } from "@/components/ui/Card";
 
 export function Contact() {
   return (
@@ -27,15 +26,9 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="mx-auto mt-10 grid max-w-3xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-x-5 gap-y-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-6">
             {socialLinks.map((link) => (
-              <Card
-                key={link.id}
-                hover
-                className="flex flex-col items-center justify-center py-7 text-center"
-              >
-                <SocialLinkItem link={link} variant="contact" />
-              </Card>
+              <SocialLinkItem key={link.id} link={link} variant="contact" />
             ))}
           </div>
         </Reveal>

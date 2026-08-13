@@ -3,12 +3,22 @@ export type ProjectFeature = {
   label: string;
 };
 
+export type ProjectScreenshot = {
+  image: string;
+  title: string;
+  description?: string;
+  alt: string;
+};
+
 export type LuminaProject = {
   id: "lumina-academy";
   title: string;
   subtitle: string;
   technologies: string[];
   features: ProjectFeature[];
+  screenshots: ProjectScreenshot[];
+  githubUrl?: string | null;
+  liveUrl?: string | null;
   problem: string;
   solution: string;
   engineering: string[];
@@ -55,6 +65,73 @@ export const luminaProject: LuminaProject = {
     { id: "resources", label: "Educational resources" },
     { id: "ai-learning", label: "AI-powered learning functionality" },
   ],
+  screenshots: [
+    {
+      image: "/assets/projects/lumina/screenshots/admin-dashboard.png",
+      title: "Admin Dashboard",
+      description:
+        "Overview of students, teachers, courses, attendance, messaging and financial activity.",
+      alt: "Lumina Academy admin dashboard showing school activity overview",
+    },
+    {
+      image: "/assets/projects/lumina/screenshots/student-dashboard.png",
+      title: "Student Dashboard",
+      description:
+        "Student-facing dashboard with academic resources, timetable and progress.",
+      alt: "Lumina Academy student dashboard with learning resources and timetable",
+    },
+    {
+      image: "/assets/projects/lumina/screenshots/teacher-resources.png",
+      title: "Teacher Resources",
+      description:
+        "Teachers can upload and manage course materials and homework.",
+      alt: "Lumina Academy teacher resources management screen",
+    },
+    {
+      image: "/assets/projects/lumina/screenshots/course-management.png",
+      title: "Course Management",
+      description: "Course setup and organization for academic workflows.",
+      alt: "Lumina Academy course management screen",
+    },
+    {
+      image: "/assets/projects/lumina/screenshots/class-management.png",
+      title: "Class Management",
+      description: "Class organization for students, teachers and schedules.",
+      alt: "Lumina Academy class management interface",
+    },
+    {
+      image: "/assets/projects/lumina/screenshots/attendance.png",
+      title: "Attendance",
+      description: "Attendance tracking connected to school administration.",
+      alt: "Lumina Academy attendance tracking screen",
+    },
+    {
+      image: "/assets/projects/lumina/screenshots/timetable.png",
+      title: "Timetable",
+      description: "Timetable view for academic planning and coordination.",
+      alt: "Lumina Academy timetable screen",
+    },
+    {
+      image: "/assets/projects/lumina/screenshots/messaging.png",
+      title: "Messaging",
+      description: "Communication workflows for the school community.",
+      alt: "Lumina Academy messaging interface",
+    },
+    {
+      image: "/assets/projects/lumina/screenshots/financial-management.png",
+      title: "Financial Management",
+      description: "Administrative tools for school financial workflows.",
+      alt: "Lumina Academy financial management screen",
+    },
+    {
+      image: "/assets/projects/lumina/screenshots/ai-learning.png",
+      title: "AI Learning",
+      description: "Local AI explanation flow for uploaded learning materials.",
+      alt: "Lumina Academy AI learning explanation interface",
+    },
+  ],
+  githubUrl: null,
+  liveUrl: null,
   problem:
     "Educational institutions can rely on fragmented systems for academic, administrative, financial, and communication workflows.",
   solution:

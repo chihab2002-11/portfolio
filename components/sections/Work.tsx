@@ -10,8 +10,8 @@ import { TechBadge } from "@/components/ui/TechBadge";
 import { Reveal } from "@/components/ui/Reveal";
 import { Card } from "@/components/ui/Card";
 import { AIExplainerVisual } from "@/components/sections/AIExplainerVisual";
-import { LuminaMockup } from "@/components/sections/LuminaMockup";
-import { ArrowRight } from "lucide-react";
+import { LuminaGallery } from "@/components/sections/LuminaGallery";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { AbstractBackground } from "@/components/ui/AbstractBackground";
 
 export function Work() {
@@ -58,6 +58,34 @@ export function Work() {
                   ))}
                 </div>
               </Reveal>
+
+              {(luminaProject.githubUrl || luminaProject.liveUrl) ? (
+                <Reveal delay={0.07}>
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    {luminaProject.githubUrl ? (
+                      <a
+                        href={luminaProject.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex h-11 items-center gap-2 rounded-full border border-subtle bg-text-primary px-4 text-sm font-medium text-bg-primary transition-transform duration-200 hover:-translate-y-0.5"
+                      >
+                        GitHub
+                      </a>
+                    ) : null}
+                    {luminaProject.liveUrl ? (
+                      <a
+                        href={luminaProject.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex h-11 items-center gap-2 rounded-full border border-subtle bg-bg-secondary px-4 text-sm font-medium text-text-primary transition-transform duration-200 hover:-translate-y-0.5"
+                      >
+                        Live Demo
+                        <ExternalLink size={15} aria-hidden="true" />
+                      </a>
+                    ) : null}
+                  </div>
+                </Reveal>
+              ) : null}
 
               <div className="mt-10 space-y-8">
                 <Reveal delay={0.08}>
@@ -109,7 +137,7 @@ export function Work() {
 
             <div className="p-5 sm:p-8">
               <Reveal delay={0.06}>
-                <LuminaMockup />
+                <LuminaGallery screenshots={luminaProject.screenshots} />
               </Reveal>
 
               <Reveal delay={0.14}>

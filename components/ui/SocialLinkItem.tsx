@@ -97,16 +97,16 @@ export function SocialLinkItem({
           "rounded-full border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] px-3 py-2",
         variant === "footer" && "hover:text-[var(--text-primary)]",
         variant === "contact" &&
-          "flex-col gap-3 rounded-[var(--radius-md)] border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] p-5 text-base text-[var(--text-primary)]",
+          "min-w-0 flex-col gap-3 rounded-[var(--radius-md)] border-[var(--border-width)] border-[var(--border-color)] bg-[var(--surface)] p-5 text-center text-base text-[var(--text-primary)]",
       )}
     >
       <Icon size={variant === "hero" || variant === "contact" ? 18 : 14} />
       <span>{variant === "contact" ? link.label : labelText}</span>
       {variant === "contact" && link.display ? (
-        <span className="text-sm text-[var(--text-secondary)]">{link.display}</span>
+        <span className="break-words text-sm text-[var(--text-secondary)]">{link.display}</span>
       ) : null}
       {variant === "contact" && link.id === "email" ? (
-        <span className="text-sm text-[var(--text-secondary)]">{link.href}</span>
+        <span className="break-all text-sm text-[var(--text-secondary)]">{link.href}</span>
       ) : null}
     </a>
   );
